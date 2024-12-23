@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Triángulo Escaleno</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label>Lado A:</ion-label>
+      <ion-input type="number" (ionInput)="convertirANumero($event, 'lado1')" placeholder="Ingrese el lado A"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lado B:</ion-label>
+      <ion-input type="number" (ionInput)="convertirANumero($event, 'lado2')" placeholder="Ingrese el lado B"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lado C:</ion-label>
+      <ion-input type="number" (ionInput)="convertirANumero($event, 'lado3')" placeholder="Ingrese el lado C"></ion-input>
+    </ion-item>
+    <img src="assets/images/triangulo.jpg" alt="Triangulo" style="width: 20%; margin: 10px 0;">
+    <ion-button expand="block" (click)="calcular()">Calcular Perímetro</ion-button>
+    <p *ngIf="resultado !== null">El perímetro es: {{ resultado }}</p>
+    <p *ngIf="resultado === null && (lado1 === null || lado2 === null || lado3 === null || lado1 <= 0 || lado2 <= 0 || lado3 <= 0)">
+      Por favor, ingrese valores válidos para los lados.
+    </p>
+  </ion-card-content>
+</ion-card>
